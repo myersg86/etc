@@ -1,0 +1,20 @@
+
+# ignore everything in the root except the "wp-content" directory.
+shop/account_images/*
+shop/backups/*
+shop/cache/*
+shop/images/*
+shop/logs/*
+shop/wpimages/*
+shop/*.php
+!css
+!shop/tpl/_inserts/*
+!shop/tpl/_skins/default/*
+!shop/tpl/homepage/default/*
+!shop/tpl/products/default/*
+
+# ignore all files starting with .
+.*
+
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore

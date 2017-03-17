@@ -1,0 +1,293 @@
+<!--products/default/product_detail.html-->
+<!--js:jquery/jquery-validate/jquery.validate.min.js-->
+<!--js:jquery/jquery-validate/additional-methods.min.js-->
+<!--js:jquery/jquery-validate/mm-methods.js-->
+<!--js:plug-ins/elevatezoom3.0.8/jquery.elevatezoom.js-->
+<!--css:plug-ins/elevatezoom3.0.8/elevatezoom.css-->
+<!--js:jquery/jquery.chained.mini.js-->
+<!--js:plug-ins/touchSwipe/jquery.touchSwipe.min.js-->
+<!--js:plug-ins/carouFredSel6-2-1/jquery.carouFredSel-6.2.1-packed.js-->
+<!--css:plug-ins/carouFredSel6-2-1/carouFredSel.css-->
+
+
+<!--mm-head
+<meta property="og:image" content="{BASEURL}/{product_image1}"/>
+<meta property="og:price:amount" content="{display_price}">
+<meta property="og:price:currency" content="USD">
+<script>
+//google remarketing variables
+var mm_google_tag_params = {
+ecomm_pagetype: 'product'
+}
+</script>
+mm-head-->
+
+
+<!--{MESSAGE_is}_on
+<div class="well success">
+	<div class="row">
+		<div class="col-sm-9">
+			<h2>Added to Cart</h2>
+			<p class="text-success">{MESSAGE}</p>
+		</div>
+		<div class="col-sm-3 text-right ptl">
+			<a href="viewcart"><button class="btn btn-primary" type="button">View Cart</button></a>
+		</div>
+	</div>
+</div>{MESSAGE_is}_on-->
+
+
+<!-- Product details -->
+
+	<div class="row" itemscope itemtype="http://schema.org/Product">
+		<div class="col-sm-6">
+			<h1 itemprop="name" class="visible-xs">{product_name}</h1>
+			<!--zoom gallery with carousel-->
+
+			<!--main image for the product zoom-->
+			<div id="imgWrapper" class="swipeable">
+			<img id="img_01" src="{RELATIVEURL}/{th2_product_image1}" data-zoom-image="{RELATIVEURL}/{product_image1}" class="img-responsive" alt="{SEO_TITLE}" itemprop="image"/>
+			</div>
+			<div class="clearfix"></div>
+			<!--add'l images for the product zoom-->
+
+	<div id="carousel-zoom">
+
+      <div id="gallery_01" class="carousel swipeable">
+       	<div class="item">
+					<div class="item-image">
+            <a href="#" data-image="{RELATIVEURL}/{th2_product_image1}" data-zoom-image="{RELATIVEURL}/{product_image1}">
+              <img id="img_01" src="{RELATIVEURL}/{th_product_image1}" class="img-responsive"/>
+            </a>
+					</div>
+				</div>
+				<!--{product_image2_is}_on<div class="item"><div class="item-image"><a href="#" data-image="{RELATIVEURL}/{th2_product_image2}" data-zoom-image="{RELATIVEURL}/{product_image2}">
+          <img id="img_01" src="{RELATIVEURL}/{th_product_image2}" class="img-responsive"/>
+        </a></div></div>{product_image2_is}_on-->
+
+				<!--{product_image3_is}_on<div class="item"><div class="item-image"><a href="#" data-image="{RELATIVEURL}/{th2_product_image3}" data-zoom-image="{RELATIVEURL}/{product_image3}">
+          <img id="img_01" src="{RELATIVEURL}/{th_product_image3}" class="img-responsive"/>
+        </a></div></div>{product_image3_is}_on-->
+
+      <!--insert|data|qty_prices|(qty_product_id = {product_id}) AND (qty_image != '')|<div class="item"><div class="item-image"><a href="javascript:void(0);" class="optionSwitch" mm-variant-menu="mm-variant-<<qty_group_text>>" mm-swatch-id="<<qty_price_id>>" data-image="{RELATIVEURL}/<<th2_qty_image>>" data-zoom-image="{RELATIVEURL}/<<qty_image>>"><img id="img_01" src="{RELATIVEURL}/<<th_qty_image>>" class="img-responsive optimg"/></a></div><div class="thumb-caption"><<qty_option_text>></div></div>||||qty_display_order|-->
+
+
+      </div><!--/gal1-->
+
+
+	<a id="zoom-prev" class="prev" href="#"><span class="glyphicons chevron-left">&nbsp;</span></a>
+	<a id="zoom-next" class="next" href="#"><span class="glyphicons chevron-right">&nbsp;</span></a>
+
+</div><!--/carousel-zoom-->
+
+			<!--/zoom gallery-->
+
+		</div><!--/6-->
+		<div class="col-sm-6">
+			<!--{new_flag}_on<span class="label label-info">New</span>{new_flag}_on-->
+			<h1 itemprop="name" class="hidden-xs">{product_name}</h1>
+			<p><a href="#tab3" id="reviews_link" data-toggle="tab">Write a Review</a>
+			</p>
+			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+				<meta itemprop="itemCondition" content="http://schema.org/NewCondition" />
+				<meta itemprop="priceCurrency" content="USD">
+      	<!--{sale_item_flag}_on <div class="text-info mtm"><strong>{sale_promo_text}</strong></div>{sale_item_flag}_on-->
+			  <h5 class="mtm mbm">Price:
+			  <!--{sale_price_is}_on<strike>{original_price}</strike> <span class="sale">Sale </span> <!--{sale_flag}_on <strike>{sale_price}</strike> {sale_flag}_on--> {sale_price_is}_on-->
+			  <!--{sale_price_is}_off <!--{sale_flag}_on<strike>{original_price}</strike> <span class="sale">Sale </span> {sale_flag}_on--> {sale_price_is}_off--> <span class="mm-product" data-product_id = "{product_id}" data-price="{price}" itemprop="price" content="{price}">{display_price}</span>
+					</h5>
+			  <p>{short_description}</p>
+			  {PRICELIST2}
+			  <!--{free_shipping}_on<p>Shipping: Free</p>{free_shipping}_on-->
+			  <!--{brand_is}_on<p itemprop="brand">Brand: {brand}</p>{brand_is}_on-->
+			  <!--{catalog_id_is}_on<p itemprop="sku">SKU: {catalog_id}</p>{catalog_id_is}_on-->
+					<!--{stock_flag}_on<!--<p>Availability: <link itemprop="availability" href="http://schema.org/InStock" />In Stock</p>-->{stock_flag}_on-->
+					<!--{stock_flag}_off<p>Availability: <link itemprop="availability" href="http://schema.org/OutofStock" />Out of Stock <!--{backorder_flag}_on - <link itemprop="availability" href="http://schema.org/PreOrder" />Backordered{backorder_flag}_on--></p>{stock_flag}_off-->
+						 <!--retail <!--{retail_multiadd}_off {ADDTOCART} {retail_multiadd}_off--> retail-->
+										<!--wholesale <!--{wholesale_multiadd}_off {ADDTOCART} {wholesale_multiadd}_off--> wholesale-->
+
+										<!--retail <!--{retail_multiadd}_on
+										<!--insert|subpage|page_{product_id}|_multiadd||-->	 {retail_multiadd}_on--> retail-->
+
+										<!--wholesale <!--{wholesale_multiadd}_on
+										<!--insert|subpage|page_{product_id}|_multiadd||-->	{wholesale_multiadd}_on--> wholesale-->
+	</div><!--/offer-->									 <p>{social_sharing}</p>
+
+				</div><!--/8-->
+	   </div><!--/row-->
+
+        <!-- Description, specs and review -->
+<div class="mm-description mtl">
+<h4>Description</h4>
+        <div class="blurb" itemprop="description">{blurb1}</div>
+
+
+      <!--{blurb2_is}_on<h4>Specs</h4>
+      <div class="blurb">{blurb2}</div>{blurb2_is}_on-->
+
+
+      <!-- Review -->
+      <a id="reviews"></a><h4>Reviews</h4>
+
+				<button type="button" class="btn btn-default mtm mbm" data-toggle="modal" data-target="#reviewsmodal">Write a review</button>
+
+
+		<!--insert|data|products|custom1={product_id} && hide_product = 'N'|file:review-pdetails.html|-->
+
+
+        <!--insert|file|products|{product_id}|reviewform_pdetails_modal.html|-->
+
+
+</div><!--/mm-description-->
+<div class="clearfix"></div>
+
+<div class="sblurb">{seo_blurb}</div>
+
+<hr />
+<!-- Recent items carousel starts -->
+<div id="recentcarousel"></div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+var btn;
+$('.cartadd,.wishadd').click(function() {
+   btn = $(this);
+});
+
+$('.addform').validate( {
+  submitHandler: function(form) {
+   	  //get the currently clicked button
+ 	  // var btn = $(":input[type=submit]:focus");
+ 	  if (btn.hasClass('wishadd')) {
+ 	  	 <!--loggedin
+			var submitData = $(form).serialize() + '&wishadd=1&ajax=1';
+			$.post("addtocart", submitData,
+		   function(data){
+		     btn.after('<div class="text-success">Added to Wish List!</div>');
+			});
+  	   loggedin-->
+       <!--loggedout form.submit(); loggedout-->
+ 	  } else {
+ 	  		console.log('validated');
+		  //e.preventDefault();
+		  var submitData = $(form).serialize() + '&ajax=1';
+		  $.post("addtocart", submitData,
+		  function(data){
+				 var addtocart_result = $.parseJSON(data);
+				 btn.after('<div class="text-success">' + addtocart_result.shortmessage + '<a href="viewcart" class="plm">View Cart</a></div>');
+					$('.mm-cart-qty').html(addtocart_result.total_qty);
+				 $('.mm-cart-total').html(addtocart_result.total_price);
+				  //$('#minicart').load('viewcart?stpl=minicart');
+		 });
+	  }
+
+  }
+});
+
+$('#recentcarousel').load('{THISPAGE}?stpl=_recentcarousel', function(){
+
+	/*for the recent items carousel */
+		$("#carousel-multiitems .carousel").carouFredSel({
+    	items	: null,
+    	scroll	: {
+    		duration		: 1000,
+    		timeoutDuration	: 2000
+    	},
+    	auto	: false,
+    	prev	: "#multiitems-prev",
+    	next	: "#multiitems-next"
+     });
+
+		 /*this is for equal li heights*/
+  	$('.multiitems').equalize({children: '.item-image'});
+  	$('.multiitems').equalize({children: '.item-name'});
+  	$('.multiitems').equalize({children: '.item-details'});
+		$('.multiitems').equalize({children: '.multiitem-price'});
+
+});
+
+//When clicking on swatches, change the menu to the selected item
+$( ".optionSwitch" ).click(function() {
+	$menuSelector = $('#' + $(this).attr('mm-variant-menu')+'-{product_id}');
+	$val = $(this).attr('mm-swatch-id');
+	$menuSelector.val($val);
+});
+
+//When selecting from a menu, show the option image
+$(".mm-variant").change(function() {
+	$swatch = $('[mm-swatch-id='+$(this).val()+']');
+	$swatch.trigger( "click" );
+});
+
+	//hide zoom carousel if only one thumbnail
+	if (('{product_image2}' == 'images-mm/cleardot.gif') && (($('.img-responsive.optimg').length == 0))) {
+		$('#carousel-zoom').hide();
+	};
+
+	//initiate the plugin and pass the id of the div containing gallery images
+  $("#img_01").elevateZoom({
+  	gallery:'gallery_01',
+		<!--desktop_view zoomType: "inner", desktop_view-->
+  	cursor: 'pointer',
+  	galleryActiveClass: 'active',
+  	responsive: true
+  });
+
+  //pass the images to Fancybox
+  $("#img_01").bind("click", function(e) {
+    var ez =   $('#img_01').data('elevateZoom');
+  	$.fancybox(ez.getGalleryList());
+    return false;
+  });
+
+	//make the width of the imagezoom variable
+  $("#gallery_01 a").click(function() {
+    $("#img_01").on("load",function() {
+        var height = $("#img_01").css("height");
+				var width = $("#img_01").css("width");
+        $(".zoomContainer").css("height", height);
+        $(".zoomContainer .zoomWindow").css("height", height);
+				$(".zoomContainer").css("width", width);
+        $(".zoomContainer .zoomWindow").css("width", width);
+      });
+  });
+
+
+
+	/*for the zoom carousel */
+		$("#carousel-zoom .carousel").carouFredSel({
+    	items	: null,
+    	scroll	: {
+    		duration		: 1000,
+    		timeoutDuration	: 2000
+    	},
+    	auto	: false,
+    	prev	: "#zoom-prev",
+    	next	: "#zoom-next"
+     });
+
+
+		$('.swipeable').swipe({
+  	swipe: function(event, direction, distance, duration, fingerCount) {},
+    click: function(event, target) {
+      $(target).click();
+    },
+    threshold: 75,
+    excludedElements: "button, input, select, textarea, .noSwipe",
+    swipeLeft: function() {
+      this.trigger('next');
+    },
+    swipeRight: function() {
+      this.trigger('prev');
+    },
+	});
+	
+
+ });
+</script>
+
+
+
+<!--/products/default/product_detail.html-->

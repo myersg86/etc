@@ -1,0 +1,23 @@
+<div class="col-sm-4" itemscope itemtype="http://www.schema.org/Product">
+	<div class="item quickorder_3up">
+		<div class="item-image">
+       <a itemprop="url" href="{item_link}"><img src="{th_product_image1}" itemtype="image" alt="Image {product_name}" class="img-responsive"/></a>
+    </div>
+        
+    <div class="item-details">
+			<h5 itemprop="name"><a itemprop="url" href="{item_link}">{product_name}</a>  
+			<!--{new_flag}_on<span class="label label-info">New</span>{new_flag}_on--></h5>
+			<p itemprop="description"><small>{short_description}</small></p>
+			<div class="item-cost">	
+				<div class="item-sale">
+				<!--{sale_item_flag}_on <div class="text-info">{sale_promo_text}</div>{sale_item_flag}_on-->			</div>
+				<div class="item-price">
+					<!--{sale_flag}_off	<!--{sale_price_is}_off <span class="mm-product" data-product-id="{product_id}">{display_price}</span> {sale_price_is}_off--><!--{sale_price_is}_on Was <strike>{original_price}</strike> <span class="color">Sale <span class="mm-product" data-product-id="{product_id}">{display_price}</span></span> {sale_price_is}_on-->{sale_flag}_off-->
+
+<!--{sale_flag}_on	Was <strike>{original_price}</strike>	<!--{sale_price_is}_on <strike>{sale_price}</strike> {sale_price_is}_on-->	<span class="color">Sale <span class="mm-product" data-product-id="{product_id}">{display_price}</span></span>{sale_flag}_on-->				
+				</div><!--/item-price-->
+			</div>
+		  {ADDTOCART}
+		</div><!--/details-->
+	</div>
+</div>
