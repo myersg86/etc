@@ -7,6 +7,7 @@ html { font-family: 'Open Sans', arial, helvetica, sans-serif; }
 body {
 	font-family: 'Open Sans', arial, helvetica, sans-serif;
 	line-height: 1.5em;
+	background-color: #D1D0AD;
 }
 
 
@@ -16,9 +17,6 @@ a:hover {
 	text-decoration: underline;
 }
 
-header .container {
-	background-color: #fff;
-}
 
 
 /* This style MUST be declared - no Helvetica due to IE conflict! */
@@ -26,8 +24,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-family: 'Open Sans', arial, helvetica, sans-serif;
 	font-weight: 600;
 }
+header {
+	background-color: #D1D0AD;
+}
 
-header .container { padding-top: 10px; padding-bottom: 10px; }
+header .container { padding-top: 10px; padding-bottom: 10px; background-color: transparent; }
 
 .logo img { max-width: 100%; }
 
@@ -39,8 +40,9 @@ header .container { padding-top: 10px; padding-bottom: 10px; }
 .clearfix { clear: both; }
 
 footer {
-	border-top: 1px solid #808080;
-	background-color: #e8e8e8;
+	border-top: 0;
+	margin-top: 5px;
+	background-color:#D1D0AD;
 	padding-top: 20px;
 }
 
@@ -87,11 +89,11 @@ nav {
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > li:hover {
 	color: #ffffff;
-	background-color: #808080;
+	background-color: #e1e1e1;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-	color: #ffffff;
-	background-color: #808080;
+	color: #032d42;
+	background-color: #f1f1f1;
 }
 .navbar-default .navbar-toggle {
 	border-color: #808080;
@@ -170,10 +172,10 @@ a.btn.navbar-toggle { color: #2A6496; margin-bottom: 0; }
 /*this sets the link color in drop-down menu with hamburger and removes the border, shadow and margins at the top and bottom of drop-down menu*/
 @media (max-width:767px) {
 	.navbar-collapse.top-nav-collapse, .navbar-collapse.top-nav-collapse.in { border: 0; -webkit-box-shadow: none; box-shadow: none; }
-	.navbar-default .navbar-nav { background-color: #808080; }
+	.navbar-default .navbar-nav { background-color: #fff; }
 	ul.nav.navbar-nav { margin-bottom: 0; }
 	ul.nav.navbar-nav > li > a { color: #333; }
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus { color: #808080; }
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus { color: #032d42; }
 }
 
 @media (max-width:600px) {
@@ -250,8 +252,10 @@ a.btn.navbar-toggle { color: #2A6496; margin-bottom: 0; }
 .btn-warning,
 .btn-danger {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.12);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.12);
+	will-change: box-shadow;
+	transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
 }
 
 .btn-default:active,
@@ -400,6 +404,13 @@ a.btn.navbar-toggle { color: #2A6496; margin-bottom: 0; }
 	background-color: #fff;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	background-image: none;
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
 }
 
 .item, .item-gc, .item-single {
@@ -587,9 +598,20 @@ ul li {
 ol li {
 	list-style-type: decimal;
 }
+p {
+	font-size: 13px;
+	line-height: 1.3em;
+}
 #content {
 	background-color: #D1D0AD;
 }
+.navbar-default {
+	background-image: none;
+	-moz-box-shadow:0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
 
 /* -- IE fixes (hopefully)  -- */
 
