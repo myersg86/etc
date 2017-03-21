@@ -574,6 +574,8 @@ a.btn.navbar-toggle { color: #2A6496; margin-bottom: 0; }
 h1 {
 	font-size: 20px;
 	color: #032d42;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 h2 {
 	font-size: 18px;
@@ -596,7 +598,7 @@ ul li {
 ol li {
 	list-style-type: decimal;
 }
-p {
+p, div[itemprop="description"], .blurb {
 	font-size: 13px;
 	line-height: 1.3em;
 }
@@ -616,7 +618,9 @@ p {
 	border-bottom: 1px solid #eee;
 	border-left: 1px solid #eee;
 }
-
+.announcements_header {
+	color: #094765;
+}
 /* -- IE fixes (hopefully)  -- */
 
 .navbar-default, .navbar-default .nav li.dropdown.open > .dropdown-toggle,
