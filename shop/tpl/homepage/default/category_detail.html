@@ -7,9 +7,11 @@ ecomm_pagetype: 'home'
 </script>
 mm-head-->
 
+
+
 <h1>{cat_custom1}</h1>
 <div class="blurb">{cat_blurb1}</div>
-<!--insert|subpage|cpage_44|_sliders.carousel-basic-arrows||captionstyle=default|-->
+<!--insert|subpage|cpage_97|_sliders.carousel-basic-arrows||captionstyle=default|-->
 <div class="blurb">{cat_blurb2}</div>
 
 <!-- Featured Items -->
@@ -29,7 +31,7 @@ mm-head-->
 
 <!-- Promo box starts -->
 <div class="row items">
-		<!--insert|items|announcements|flag1|file:announcement.html|||||-->
+	<!--insert|items|announcements|flag1|file:announcement.html|||||-->
 </div><!--/row-->
 
 <!-- Trust indicators -->
@@ -38,13 +40,39 @@ mm-head-->
 		<h4>{reviews_header}</h4>
 				<!--insert|items|reviews||file:testimonial.html|1||||-->
 	</div><!--/6-->
-<!-- 	<div class="col-sm-6">
+<!--  <div class="col-sm-6">
 		insert|items|announcements|flag1|file:announcement.html|||||
 	</div>--><!--/6-->
 </div><!--/row-->
 
 
 
-
-
-
+<script type="text/javascript">
+$(window).resize(function() {
+	$('.swipeable').swipe({
+	  	swipe: function(event, direction, distance, duration, fingerCount) {},
+	    click: function(event, target) {
+	      $(target).click();
+	    },
+	    threshold: 75,
+	    excludedElements: "button, input, select, textarea, .noSwipe",
+	    swipeLeft: function() {
+	      this.trigger('next');
+	    },
+	    swipeRight: function() {
+	      this.trigger('prev');
+	    },
+	});
+  // add the stuff here to execute the your slider again;
+	$("#carousel-basic .carousel").carouFredSel({
+		responsive: true,
+		items       : 1,
+		auto	: {
+			play: true,
+			duration: 1000
+		},
+		prev	: "#basic-prev",
+		next	: "#basic-next"
+ 	});
+});
+</script>

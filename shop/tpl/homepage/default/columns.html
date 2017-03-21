@@ -1,4 +1,15 @@
-
+<style type="text/css" media="screen">
+	.flexrow{
+		display: flex;
+		flex-direction: row;
+	}
+</style>
 <div class="container mm-columns mm-{template_name}">
-{PAGECONTENT}
+	<div class="row flexrow">
+		<div class="col-sm-9">
+			{PAGECONTENT}
+		</div>
+		<div class="col-sm-3" style="background-color: black;">
+		</div>
+	</div>
 </div><!--/container-->

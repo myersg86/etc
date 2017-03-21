@@ -1,0 +1,34 @@
+<div class="col-sm-6" itemscope itemtype="http://www.schema.org/Product">
+	<div class="item">
+		<!-- Item image -->
+		<div class="item-image">
+                  <a itemprop="url" href="{page_name}"><img src="{th_product_image1}" itemtype="image" alt="Image {product_name}" class="img-responsive" /></a>
+        </div>
+        <!-- Item details -->
+        <div class="item-details">
+	        <!-- Name -->
+	        <h5 itemprop="name"><a itemprop="url" href="{page_name}">{product_name}</a>  
+					
+					<!--{new_flag}_on<span class="label label-info">New</span>{new_flag}_on--></h5>
+	        
+	        <p itemprop="description">{short_description}</p>
+	        <hr />
+					
+	        <!-- Price -->
+					<div class="item-cost">
+					<div class="item-sale text-center">
+					<!--{sale_price_is}_on Was <strike>{original_price}</strike>  <!--{sale_flag}_on <strike>{sale_price}</strike> {sale_flag}_on--> {sale_price_is}_on-->
+                			 <!--{sale_price_is}_off <!--{sale_flag}_on Was <strike>{original_price}</strike> {sale_flag}_on--> {sale_price_is}_off-->
+					</div><!--/item-sale-->
+	        <div class="item-price pull-left" itemprop="price">
+					<!--{sale_price_is}_on <!--{sale_flag}_on <span class="color">Sale</span> {sale_flag}_on--> {sale_price_is}_on-->
+          <!--{sale_price_is}_off <!--{sale_flag}_on <span class="color">Sale</span> {sale_flag}_on--> {sale_price_is}_off--> 
+					<!--{sale_flag}_off <!--{sale_price_is}_on <span class="color">Sale</span> {sale_price_is}_on--> {sale_flag}_off-->
+					{display_price}</div>
+	        <div class="pull-right"><a itemprop="url" href="{page_name}" class="btn btn-info btn-sm">View Item</a></div>
+
+            <div class="clearfix"></div>
+						</div><!--/cost-->
+        </div><!--/details-->
+    </div>
+</div>

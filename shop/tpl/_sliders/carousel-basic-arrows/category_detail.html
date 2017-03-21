@@ -1,0 +1,80 @@
+<!--js:plug-ins/touchSwipe/jquery.touchSwipe.min.js-->
+<!--js:plug-ins/carouFredSel6-2-1/jquery.carouFredSel-6.2.1-packed.js-->
+<!--css:mm-css/sliders/carousel-basic-arrows.css-->
+<!--css:mm-css/sliders/captions/{captionstyle}.css-->
+
+<div id="carousel-basic">
+	<div class="carousel swipeable">
+		<!--insert|items|slides||file:fredslider_caption.html|||||-->
+	</div>	
+	<a id="basic-prev" class="prev" href="#"><span class="glyphicons chevron-left">&nbsp;</span></a>
+	<a id="basic-next" class="next" href="#"><span class="glyphicons chevron-right">&nbsp;</span></a>
+
+</div><!--/carousel-basic-->
+
+<script type="text/javascript">
+$(document).ready(function() {
+	/*for the basic slider carousel */			
+	$("#carousel-basic .carousel").carouFredSel({
+		responsive: true,
+		items       : {
+			visible: 1,
+			start: 0,
+			width: "auto",
+			align: center
+		}
+		auto	: {
+			play: true,
+			duration: 1250
+		},
+		scroll : {
+			fx: "crossfade"
+		},
+		prev	: "#basic-prev",
+		next	: "#basic-next"
+				
+ 	});
+	
+	$('.swipeable').swipe({
+  	swipe: function(event, direction, distance, duration, fingerCount) {},
+    click: function(event, target) {
+      $(target).click();
+    },
+    threshold: 75,
+    excludedElements: "button, input, select, textarea, .noSwipe",
+    swipeLeft: function() {
+      this.trigger('next');
+    },
+    swipeRight: function() {
+      this.trigger('prev');
+    },
+		allowPageScroll: 'auto'
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(window).resize(function() {
+  // add the stuff here to execute the your slider again;
+	$("#carousel-basic .carousel").carouFredSel({
+		responsive: true,
+		items       : {
+			visible: 1,
+			start: 0,
+			width: "auto",
+			align: center
+		}
+		auto	: {
+			play: true,
+			duration: 1250
+		},
+		scroll : {
+			fx: "crossfade"
+		},
+		prev	: "#basic-prev",
+		next	: "#basic-next"
+		
+ 	});
+});
+</script>
+

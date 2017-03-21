@@ -1,5 +1,0 @@
-<?php 
-include './shop/settings.php';
-include '../datahostshop/server_settings.php';
-include MM_PATH.'/cart.php';
-?>

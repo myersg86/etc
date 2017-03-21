@@ -620,6 +620,21 @@ p, div[itemprop="description"], .blurb {
 .announcements_header {
 	color: #094765;
 }
+.flexrow{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+.headerlinks a, .cartinfo a{
+	color: #032d42;
+	font-weight: 600;
+}
 /* -- IE fixes (hopefully)  -- */
 
 .navbar-default, .navbar-default .nav li.dropdown.open > .dropdown-toggle,
