@@ -1,0 +1,115 @@
+<!--products/default/product_detail.html-->
+<!--js:jquery/jquery-validate/jquery.validate.min.js-->
+<!--js:jquery/jquery-validate/additional-methods.min.js-->
+<!--js:jquery/jquery-validate/mm-methods.js-->
+<!--js:plug-ins/elevatezoom3.0.8/jquery.elevatezoom.js-->
+<!--css:plug-ins/elevatezoom3.0.8/elevatezoom.css-->
+<!--js:jquery/jquery.chained.mini.js-->
+<!--js:plug-ins/touchSwipe/jquery.touchSwipe.min.js-->
+<!--js:plug-ins/carouFredSel6-2-1/jquery.carouFredSel-6.2.1-packed.js-->
+<!--css:plug-ins/carouFredSel6-2-1/carouFredSel.css-->
+
+
+<!--mm-head
+<meta property="og:image" content="{BASEURL}/{product_image1}"/>
+<meta property="og:price:amount" content="{display_price}">
+<meta property="og:price:currency" content="USD">
+<script>
+//google remarketing variables
+var mm_google_tag_params = {
+ecomm_pagetype: 'product'
+}
+</script>
+mm-head-->
+
+
+<!--{MESSAGE_is}_on
+<div class="well success">
+	<div class="row">
+		<div class="col-sm-9">
+			<h2>Added to Cart</h2>
+			<p class="text-success">{MESSAGE}</p>
+		</div>
+		<div class="col-sm-3 text-right ptl">
+			<a href="viewcart"><button class="btn btn-primary" type="button">View Cart</button></a>
+		</div>
+	</div>
+</div>{MESSAGE_is}_on-->
+
+
+<!-- Product details -->
+
+	<div class="row" itemscope itemtype="http://schema.org/Product">
+		<div class="col-sm-6">
+			<h1 itemprop="name" class="visible-xs">{product_name}</h1>
+			<!--zoom gallery with carousel-->
+
+			<!--main image for the product zoom-->
+			<div class="swipeable">
+			<img id="img_01" src="{RELATIVEURL}/{th2_product_image1}" data-zoom-image="{RELATIVEURL}/{product_image1}" class="img-responsive" alt="{SEO_TITLE}" itemprop="image"/>
+			</div>
+			<div class="clearfix"></div>
+		</div><!--/6-->
+		<div class="col-sm-6">
+			<!--{new_flag}_on<span class="label label-info">New</span>{new_flag}_on-->
+			<h1 itemprop="name" class="hidden-xs">{product_name}</h1>
+			<p><a href="#tab3" id="reviews_link" data-toggle="tab">Write a Review</a>
+			</p>
+			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+				<meta itemprop="itemCondition" content="http://schema.org/NewCondition" />
+				<meta itemprop="priceCurrency" content="USD">
+						<!--{sale_item_flag}_on <div class="text-info mtm"><strong>{sale_promo_text}</strong></div>{sale_item_flag}_on-->
+			<h5 class="mtm mbm">Price:
+			<!--{sale_price_is}_on<strike>{original_price}</strike> <span class="sale">Sale </span> <!--{sale_flag}_on <strike>{sale_price}</strike> {sale_flag}_on--> {sale_price_is}_on-->
+			<!--{sale_price_is}_off <!--{sale_flag}_on<strike>{original_price}</strike> <span class="sale">Sale </span> {sale_flag}_on--> {sale_price_is}_off--> <span class="mm-product" data-product_id = "{product_id}" data-price="{price}" itemprop="price" content="{price}">{display_price}</span>
+					</h5>
+			<p>{short_description}</p>
+			{PRICELIST2}
+			<!--{free_shipping}_on<p>Shipping: Free</p>{free_shipping}_on-->
+			<!--{brand_is}_on<p itemprop="brand">Brand: {brand}</p>{brand_is}_on-->
+			<!--{catalog_id_is}_on<p itemprop="sku">SKU: {catalog_id}</p>{catalog_id_is}_on-->
+			<!--{stock_flag}_on<!--<p>Availability: <link itemprop="availability" href="http://schema.org/InStock" />In Stock</p>-->{stock_flag}_on-->
+			<!--{stock_flag}_off<p>Availability: <link itemprop="availability" href="http://schema.org/OutofStock" />Out of Stock <!--{backorder_flag}_on - <link itemprop="availability" href="http://schema.org/PreOrder" />Backordered{backorder_flag}_on--></p>{stock_flag}_off-->
+			<!--retail <!--{retail_multiadd}_off {ADDTOCART} {retail_multiadd}_off--> retail-->
+			<!--wholesale <!--{wholesale_multiadd}_off {ADDTOCART} {wholesale_multiadd}_off--> wholesale-->
+
+			<!--retail <!--{retail_multiadd}_on
+			<!--insert|subpage|page_{product_id}|_multiadd||-->  {retail_multiadd}_on--> retail-->
+
+			<!--wholesale <!--{wholesale_multiadd}_on
+			<!--insert|subpage|page_{product_id}|_multiadd||--> {wholesale_multiadd}_on--> wholesale-->
+	</div><!--/offer-->
+	<p>{social_sharing}</p>
+
+				</div><!--/8-->
+		 </div><!--/row-->
+
+				<!-- Description, specs and review -->
+<div class="mm-description mtl">
+<h4>Description:</h4>
+		<div class="blurb" itemprop="description">{blurb1}</div>
+
+			<!--{blurb2_is}_on<div class="col-sm-6"><h4>Date & Time:</h4>
+			<div class="blurb">{blurb2}</div></div>{blurb2_is}_on-->
+			<!--{blurb2_is}_on<div class="col-sm-6"><h4>Instructor:</h4>
+			<p>{custom1}</p><h4>Price: </h4><p>{custom2}</p></div>{blurb2_is}_on-->
+</div>
+
+			
+
+</div><!--/mm-description-->
+<div class="clearfix"></div>
+<!-- Review -->
+			<a id="reviews"></a><h4>Reviews</h4>
+
+				<button type="button" class="btn btn-default mtm mbm" data-toggle="modal" data-target="#reviewsmodal">Write a review</button>
+
+
+		<!--insert|data|products|custom1={product_id} && hide_product = 'N'|file:review-pdetails.html|-->
+
+
+				<!--insert|file|products|{product_id}|reviewform_pdetails_modal.html|-->
+
+<div class="sblurb">{seo_blurb}</div>
+
+<!--/products/default/product_detail.html-->

@@ -68,9 +68,9 @@ nav {
 }
 .navbar-header { float: none; }
 .navbar-default {
-	background-color: #e8e8e8;
-	border-top: 1px solid #808080;
-	border-bottom: 1px solid #808080;
+	background-color: #09486b;
+	border-top: 1px solid  #092e43;
+	border-bottom: 1px solid  #092e43;
 }
 .navbar-default .navbar-brand {
 	color: #ffffff;
@@ -82,7 +82,8 @@ nav {
 	color: #ffffff;
 }
 .navbar-default .navbar-nav > li > a {
-	color: #808080;
+	color: #e8e000;
+	font-weight: 600;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 	color: #555;
@@ -591,13 +592,11 @@ h4 {
 }
 ul li {
 	font-size: 14px;
-	list-style-type: square;
-	list-style-position: outside;
 	color: #000000;
 }
-ol li {
+/*ol li {
 	list-style-type: decimal;
-}
+}*/
 p, div[itemprop="description"], .blurb {
 	font-size: 13px;
 	line-height: 1.3em;
