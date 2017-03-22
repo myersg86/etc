@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<!-- Title and other stuffs -->
+	<title>{SEO_TITLE}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="{SEO_DESCRIPTION}">
+	<meta name="keywords" content="{SEO_KEYWORDS}">
+	<meta name="author" content="MightyMerchant {version}">
+	{mmCANONICAL}
+	<meta property="og:title" content="{SEO_TITLE}"/>
+	<meta property="og:site_name" content="{store_name}"/>
+	<meta property="og:url" content="{RELATIVEURL}/{SELF}"/>
+	<meta property="og:description" content="{SEO_DESCRIPTION}"/>
+	<meta property="fb:admins" content="{fb_user_id}" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
+
+
+	<!-- Stylesheets -->
+
+	<link href="{ASSETSURL}/bootstrap_332/css/bootstrap.min.css" rel="stylesheet">
+	<link href="{ASSETSURL}/bootstrap_332/css/bootstrap-theme.min.css" rel="stylesheet">
+
+
+
+	{CSSASSETS}
+
+	<!-- Glyphicons -->
+	<link href="{ASSETSURL}/plug-ins/glyphicons-pro/css/glyphicons.css" rel="stylesheet">
+	<link href="{ASSETSURL}/plug-ins/glyphicons-pro/css/social.css" rel="stylesheet">
+
+	<!--shared MM stylesheet-->
+	<link href="{ASSETSURL}/mm-css/mm-framework.css" rel="stylesheet">
+
+
+	<!--shared skin stylesheet-->
+	<link href="{ASSETSURL}/_skins/default/stylesheet-skin.css" rel="stylesheet">
+	<!--<link href="{RELATIVEURL}/assets/_skins/color/<<color>>.css" rel="stylesheet">-->
+
+	<!--local stylesheet-->
+	<link href="{RELATIVEURL}/css/stylesheet-local.css" rel="stylesheet">
+
+	<!-- HTML5 Support for IE -->
+
+	<!--[if lt IE 9]>
+	<script src="{ASSETSURL}/_skins/default/js/html5shim.js"></script>
+	<script src="{ASSETSURL}/mm-js/respond.min.js"></script>
+	<![endif]-->
+
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+	<script src="{ASSETSURL}/jquery/jquery-1.11.2.min.js"></script>
+	<!-- jQuery -->
+	<!--notsecure <base href="{BASEHREF}"> notsecure-->
+
+	{extjs_head}
+
+	{ANALYTICS}
+</head>
+
+	<body ontouchstart="">
+		{extjs_bodytop}
+		<div class="mobilewrapper">
+
+			<!-- Header starts -->
+			<header>
+				<!--{sitewide_message_is}_on<div class="promo">{sitewide_message}</div>{sitewide_message_is}_on-->
+				<div class="container hidden-print">
+					<div class="row">
+
+						<div class="col-sm-3">
+							<div id="logo"><a href="{BASEURL}">{logo}</a></div>
+							<!-- <div class="tagline">{tagline}</div> -->
+						</div>
+
+						<div class="col-sm-9 hidden-xs">
+							<div class="headerlinks text-right">
+								<a href="{BASEURL}"><span class="glyphicon glyphicons home"></span></a> | <!--loggedout<a href="login" role="button">Account Login</a> | <!--{wholesale_enabled}_on<a href="newaccount?wlogin=Y">{wholesale_enabled}_on--><!--{wholesale_enabled}_off<a href="newaccount">{wholesale_enabled}_off-->Request an Account</a> | <a href="sharelist" role="button">Wish Lists</a> | loggedout-->
+								<!--loggedinWelcome, {account_first_name} | <a href="orderhistory" role="button" >My Account</a> | <a href="logout" role="button">Log Out</a> | loggedin-->
+								<a href="contact-us">Contact Us</a> | <a href="tel:{store_phone1}">{store_phone1}</a> | 
+
+							</div>
+
+							<div class="cartinfo">
+								<a href="viewcart" role="button"><span class="mm-cart-qty">{total_qty}</span> Item(s) in your <span class="glyphicon glyphicons shopping_cart"></span></a> <strong><span class="mm-cart-total">{total_price}</span></strong>
+							</div>
+							<div class="headerbanner row">
+								<img src="images/filmstrip.png" alt="" class="img-responsive pull-right">
+							</div>
+							<div class="row searchrow">
+								<div class="col-lg-5 col-md-6 col-sm-6 pull-right location_header" >
+									<p style="line-height: 34px; font-weight: 600; float: right;">{store_name} - {store_footer_address}</p>
+								</div>
+								<div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-6 pull-right">
+									<form method="get" action="search" class="form hidden-print hidden-xs">
+										<input type="hidden" name="noheadings" value="1">
+										<div class="input-group">
+											<!--{SEARCHTERMS_is}_on<input type="text" name="keywords" class="form-control" value="{SEARCHTERMS}">{SEARCHTERMS_is}_on-->
+											<!--{SEARCHTERMS_is}_off<input type="text" name="keywords" class="form-control" placeholder="Enter something to search for">{SEARCHTERMS_is}_off-->
+											<span class="input-group-btn">
+												<button class="btn btn-primary btn-sm" type="submit" ga_label="{keywords}" style="line-height: 21px;">Search</button>
+											</span>
+										</div><!--/input-group-->
+									</form>
+								</div>
+							</div>
+						</div><!--/6-->
+					</div><!--/row-->
+				</div><!--/container-->
+				<div class="printlogo visible-print">{logo}</div>
+			</header>
+			<!-- Header ends -->
+
+			<!-- Navigation -->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container">
+					<div id="mobilenav" class="navbar-header hidden-lg hidden-md hidden-sm visible-xs">
+						<div class="row">
+							<div class="col-xs-3 text-center">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".top-nav-collapse">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="glyphicons show_lines"></span>
+								</button>
+								<div class="toggle-text"><a data-toggle="collapse" data-parent="#mobilenav" data-target=".top-nav-collapse">Menu</a></div>
+							</div>
+							<div class="col-xs-3 text-center">
+								<!--loggedout<a href="login" class="btn navbar-toggle"><span class="glyphicons user"></span></a><div class="toggle-text"><a href="login">Log In</a></div>loggedout-->
+								<!--loggedin<a href="orderhistory" class="btn navbar-toggle"><span class="glyphicons user"></span></a><div class="toggle-text"><a href="orderhistory">My Account</a></div>loggedin-->
+
+							</div>
+							<div class="col-xs-3 text-center">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".top-nav-search" aria-expanded="false">
+									<span class="glyphicons search"></span>
+								</button>
+								<div class="toggle-text"><a data-parent="#mobilenav" data-toggle="collapse" data-target=".top-nav-search">Search</a></div>
+							</div>
+							<div class="col-xs-3 text-center">
+								<a href="viewcart" class="btn navbar-toggle">
+									<span class="mm-cart-qty">{total_qty}</span> <span class="glyphicons shopping_cart"></span></a>
+									<div class="toggle-text"><a href="viewcart">Cart</a></div>
+								</div>
+							</div><!--/row-->
+						</div><!--/navbar-header-->
+
+						<div class="collapse navbar-collapse top-nav-collapse">
+							<ul class="nav navbar-nav">
+								<!--insert|nav|0|dropdown||||-->
+							</ul>
+						</div><!--/collapse-->
+					</div><!--/container-->
+				</nav><!--/navbar-->
+
+
+				<div class="container visible-xs hidden-print">
+					<div class="row">
+						<div class="col-xs-12 mvm collapse top-nav-search">
+
+							<form method="get" action="search" class="form" role="search">
+
+								<div class="input-group">
+									<!--{SEARCHTERMS_is}_on<input type="text" name="keywords" class="form-control" value="{SEARCHTERMS}">{SEARCHTERMS_is}_on-->
+									<!--{SEARCHTERMS_is}_off<input type="text" name="keywords" class="form-control" placeholder="Enter something to search for">{SEARCHTERMS_is}_off-->
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="submit">Search</button>
+									</span>
+								</div><!-- /input-group -->
+							</form>
+						</div><!--/12-->
+					</div><!--/row-->
+				</div>
+
+
+
+				<div id="content">
+
+					{COLUMNS}
+
+				</div>
+
+				<!-- Footer starts -->
+				<footer>
+					<div id="footer">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-3">
+									<p><span class="glyphicons home"></span> &nbsp; {store_footer_address}</p>
+									<p><span class="glyphicons earphone"></span> &nbsp; <a href="tel:{store_phone1}">{store_phone1}</a> &nbsp; <a href="tel:{store_phone2}">{store_phone2}</a></p>
+									<p class="hidden-print"><span class="glyphicons envelope"></span> &nbsp; <a href="contact-us">Email Us</a></p>
+									<div class="socialicons2 hidden-print">
+										<!--insert|items|socialicons||file:socialicons.html||||-->
+									</div>
+									<div class="payment-icons">
+										{PMTPICS}
+									</div>
+								</div>
+
+								<div class="col-sm-9">
+
+									<div class="row hidden-print">
+										<!--insert|megamenu|0|_footernav|cat_nav_footer_flag|<div class="col-sm-4"><<megamenu>></div>|-->
+									</div><!--/row-->
+
+								</div>
+
+
+
+							</div><!--/row-->
+
+							<p class="mtl"><small>{ADMIN_EDIT}  &copy; Copyright {CURRENTYEAR} {store_name}. All rights reserved. | <a href="http://www.heroweb.com" target="_blank">Responsive Website Design</a> by HEROweb | {MIGHTY}</small></p>
+
+						</div><!--/container-->
+					</div><!--/footer-->
+				</footer>
+
+				<!-- Footer ends -->
+
+
+
+				<!-- Scroll to top -->
+				<span class="totop"><a href="#"><span class="glyphicon glyphicon-chevron-up"></span></a></span>
+			</div><!--/mobilewrapper-->
+
+			<div id="popuparea"></div>
+
+
+			<!-- JS -->
+			<script src="{ASSETSURL}/bootstrap_332/js/bootstrap.js"></script> <!-- Bootstrap -->
+			<script src="{ASSETSURL}/plug-ins/twitter-bootstrap-hover-dropdown.min.js"></script>
+			<script src="{ASSETSURL}/_skins/default/js/filter.js"></script> <!-- Filter for support page -->
+			<script src="{ASSETSURL}/_skins/default/js/jquery.tweet.js"></script> <!-- Twitter -->
+			<script src="{ASSETSURL}/_skins/default/js/nav.js"></script> <!-- Sidebar navigation -->
+			<script type="text/javascript" src="{ASSETSURL}/plug-ins/dialog2/lib/jquery.controls.js"></script>
+			<script type="text/javascript" src="{ASSETSURL}/jquery/jquery.form.js"></script>
+			<script type="text/javascript" src="{ASSETSURL}/plug-ins/dialog2/lib/jquery.dialog2.js"></script>
+			<script type="text/javascript" src="{ASSETSURL}/plug-ins/dialog2/lib/jquery.dialog2.helpers.js"></script>
+			<script type="text/javascript" src="{ASSETSURL}/plug-ins/equalize/equalize.min.js"></script>
+			<script type="text/javascript" src="{ASSETSURL}/plug-ins/cookie/jquery.cookie.js"></script>
+			{JSASSETS}
+			<script src="{ASSETSURL}/mm-js/mm-global.js"></script>
+			<!-- Custom codes -->
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+		// MMJS
+		{MMJS}
+		// END MMJS
+		/* jquery.controls.js controls */
+		$(document).controls();
+
+		//if popup message is present show non-form modal on first visit
+		if ( firstTime('sitewide') && '{popup_message_is}' == 'Y') {
+
+			$('#popuparea').load('{BASEURL}/mypopup.html', function(){
+
+				setTimeout(function() {
+					$('#popup').modal('show');
+				}, 3000);
+
+						//$('#popup').modal('show');
+					});
+		}
+
+		//if popup message is present show modal with form on first visit
+		if ( firstTime('popform') && '{popup_form_is}' == 'Y') {
+
+
+
+			$('#popuparea').load('{BASEURL}/mailinglist_tiny.html', function(){
+
+				setTimeout(function() {
+					$('#popupform').modal('show');
+				}, 1000);
+
+			});
+
+		}
+
+	});
+</script>
+<script type="text/javascript">
+	$(window).load(function() {
+	 $( window ).resize();
+	 if ( $(window).width() > 737) {
+		/*this is for equal li heights*/
+		$('.items').equalize({children: 'h5'});
+		$('.items').equalize({children: '.item-image'});
+		$('.items').equalize({children: '.item-details'});
+		$('.item-image').equalize();
+		$('.items').equalize({children: 'div.item-cost'});
+		$('.items').equalize({children: 'div.item-sale'});
+		$('.items-gc').equalize({children: 'h5'});
+		$('.carousel').equalize({children: '.item-details'});
+		$('.carousel').equalize({children: '.item-name'});
+		$('.items').equalize({children: '.blurb'});
+		/* end equal height li */
+	}
+});
+</script>
+
+<div id="popupbg"></div>
+<!--<div id="popup">{popup_message}</div>-->
+
+
+{extjs_bodybottom}
+{google_remarketing}
+</body>
+</html>
