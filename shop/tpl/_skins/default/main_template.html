@@ -74,36 +74,45 @@
 				<div class="container hidden-print">
 					<div class="row">
 
-						<div class="col-sm-6">
+						<div class="col-sm-3">
 							<div id="logo"><a href="{BASEURL}">{logo}</a></div>
 							<!-- <div class="tagline">{tagline}</div> -->
 						</div>
 
-						<div class="col-sm-6 hidden-xs">
+						<div class="col-sm-9 hidden-xs">
+							<div class="cartinfo">
+								<a href="viewcart" role="button"><span class="mm-cart-qty">{total_qty}</span> Item(s) in your <span class="glyphicon glyphicons shopping_cart"></span></a> <strong><span class="mm-cart-total">{total_price}</span></strong>
+							</div>
 							<div class="headerlinks text-right">
 								<a href="{BASEURL}"><span class="glyphicon glyphicons home"></span></a> | <!--loggedout<a href="login" role="button">Account Login</a> | <!--{wholesale_enabled}_on<a href="newaccount?wlogin=Y">{wholesale_enabled}_on--><!--{wholesale_enabled}_off<a href="newaccount">{wholesale_enabled}_off-->Request an Account</a> | <a href="sharelist" role="button">Wish Lists</a> | loggedout-->
 								<!--loggedinWelcome, {account_first_name} | <a href="orderhistory" role="button" >My Account</a> | <a href="logout" role="button">Log Out</a> | loggedin-->
-								<a href="contact-us">Contact Us</a> | <a href="tel:{store_phone1}">{store_phone1}</a>
+								<a href="contact-us">Contact Us</a> | <a href="tel:{store_phone1}">{store_phone1}</a> | 
 
 							</div>
 
-							<div class="cartinfo mbs">
-								<a href="viewcart" role="button"><span class="mm-cart-qty">{total_qty}</span> Item(s) in your <span class="glyphicon glyphicons shopping_cart"></span></a> <strong><span class="mm-cart-total">{total_price}</span></strong>
+							
+							<div class="headerbanner row">
+								<img src="images/filmstrip.png" alt="" class="img-responsive pull-right">
 							</div>
-
-							<form method="get" action="search" class="form hidden-print hidden-xs">
-								<input type="hidden" name="noheadings" value="1">
-
-								<div class="input-group">
-									<!--{SEARCHTERMS_is}_on<input type="text" name="keywords" class="form-control" value="{SEARCHTERMS}">{SEARCHTERMS_is}_on-->
-									<!--{SEARCHTERMS_is}_off<input type="text" name="keywords" class="form-control" placeholder="Enter something to search for">{SEARCHTERMS_is}_off-->
-									<span class="input-group-btn">
-										<button class="btn btn-default btn-sm" type="submit" ga_label="{keywords}">Search</button>
-									</span>
-								</div><!--/input-group-->
-
-							</form>
-
+							<div class="row searchrow">
+								<div class="col-lg-5 col-md-6 col-sm-6 pull-right">
+									<form method="get" action="search" class="form hidden-print hidden-xs">
+										<input type="hidden" name="noheadings" value="1">
+										<div class="input-group">
+											<!--{SEARCHTERMS_is}_on<input type="text" name="keywords" class="form-control" value="{SEARCHTERMS}">{SEARCHTERMS_is}_on-->
+											<!--{SEARCHTERMS_is}_off<input type="text" name="keywords" class="form-control" placeholder="Enter something to search for">{SEARCHTERMS_is}_off-->
+											<span class="input-group-btn">
+												<button class="btn btn-primary btn-sm" type="submit" ga_label="{keywords}" style="line-height: 21px;">Search</button>
+											</span>
+										</div><!--/input-group-->
+									</form>
+								</div>
+								<div class="col-lg-7 col-md-6 col-sm-6 pull-right header_location" >
+									<p style="line-height: 34px; font-weight: 600; float: right;">
+									<b class="hidden-md hidden-sm hidden-xs">{store_name} - </b>{store_footer_address}</p>
+								</div>
+								
+							</div>
 						</div><!--/6-->
 					</div><!--/row-->
 				</div><!--/container-->

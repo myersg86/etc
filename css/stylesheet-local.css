@@ -7,7 +7,7 @@ html { font-family: 'Open Sans', arial, helvetica, sans-serif; }
 body {
 	font-family: 'Open Sans', arial, helvetica, sans-serif;
 	line-height: 1.5em;
-	background-color: #D1D0AD;
+	background-color: #e9e8cd;
 }
 
 
@@ -16,9 +16,8 @@ a:hover {
 	color: #094765;
 	text-decoration: underline;
 }
-.mm-columns {
-	a {text-decoration: underline;}
-}
+.blurb a {text-decoration: underline;}
+
 .headerbanner {
 	background-image: url("images/filmstrip.png");
 }
@@ -30,7 +29,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-weight: 600;
 }
 header {
-	background-color: #D1D0AD;
+	background-color: #e9e8cd;
 }
 
 header .container { padding-top: 10px; padding-bottom: 10px; background-color: transparent; }
@@ -47,7 +46,7 @@ header .container { padding-top: 10px; padding-bottom: 10px; background-color: t
 footer {
 	border-top: 0;
 	margin-top: 5px;
-	background-color:#D1D0AD;
+	background-color:#e9e8cd;
 	padding-top: 20px;
 }
 
@@ -609,7 +608,7 @@ p, div[itemprop="description"], .blurb {
 	line-height: 1.3em;
 }
 #content {
-	background-color: #D1D0AD;
+	background-color: #e9e8cd;
 }
 .navbar-default {
 	background-image: none;
@@ -673,12 +672,11 @@ p, div[itemprop="description"], .blurb {
 @media (min-width:992px) {
 
 }
-@media screen and (max-width: 768px) {
+
 	.header_location p {
 	  font-size: 12px;
 	}
 	.header_location {
-	  margin-left: 0;
-	  margin-right: 0;
+	  padding-left: 0;
+	  padding-right: 0;
 	}
-}
