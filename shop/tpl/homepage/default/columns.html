@@ -1,15 +1,19 @@
-<style type="text/css" media="screen">
-	.flexrow{
-		display: flex;
-		flex-direction: row;
-	}
-</style>
+
 <div class="container mm-columns mm-{template_name}">
 	<div class="row flexrow">
-		<div class="col-sm-9">
+		<div class="col-sm-7">
 			{PAGECONTENT}
 		</div>
-		<div class="col-sm-3" style="background-color: black;">
+		<div class="col-sm-5" id="contentcontainerright">
+			<h1>{cat_custom2}</h1>
+			<h2>{cat_custom3}</h2>
+			<h2>{cat_custom4}</h2>
+
+			<!--insert|items|10|flag1|<div class="row"><div class="col-xs-4"><a href="<<page_name>>"><img src="<<th_product_image1>>" alt="<<product_name>>" class="img-responsive"></a></div><div class="col-xs-8"><a href="<<page_name>>"><h5 class="tiny"><<product_name>></h5></a><p>with <<custom1>></p><p><<blurb2>></p><a href="<<page_name>>"><p >Details ></p></a></div></div><hr>|4|1||-->
+
+			<!--insert|categories|10||<div class="col-sm-6"><a href="<<link_action>>" class="class="bluelinks" style="max-width: 50%;"><<cat_name>></a></div>|20|2||-->
+			<a href="class-list">See all workshops ></a>
 		</div>
 	</div>
-</div><!--/container-->
+</div>
+<!--/container-->

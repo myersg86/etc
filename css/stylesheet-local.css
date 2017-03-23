@@ -578,6 +578,7 @@ a.btn.navbar-toggle { color: #2A6496; margin-bottom: 0; }
 
 
 /*Site-specific styles - these were created specifically for this site*/
+/*Greg's Custom Styles*/
 h1 {
 	font-size: 20px;
 	color: #032d42;
@@ -644,6 +645,24 @@ p, div[itemprop="description"], .blurb {
 .headerlinks, .cartinfo {
 	display: inline-block;
 	float: right;
+}
+.flexrow{
+	display: flex;
+	flex-direction: row;
+}
+#contentcontainerright .col-xs-8 p  {
+  margin-bottom: 1px;
+  font-size: 12px;
+  line-height: 16px;
+}
+h5.tiny {
+  font-size: 13px;
+  margin-bottom:3px;
+}
+#contentcontainerright .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 /* -- IE fixes (hopefully)  -- */
 
