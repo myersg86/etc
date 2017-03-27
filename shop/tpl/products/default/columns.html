@@ -1,0 +1,24 @@
+<!--{template_name} {component_layout} columns.html-->
+
+<div class="container mm-columns mm-{template_name}">
+	<div class="row">
+		<!-- Sidebar -->
+		<div class="col-sm-3 hidden-xs">
+		 {FACETS}
+		 <h4><!--wholesale Wholesale wholesale-->Categories</h4>
+		 <!-- Sidebar navigation -->
+		 <nav>
+			<ul id="nav">
+				<!--insert|nav|1|accordian|cat_nav_flag|2|cat_name|-->
+			</ul>                                     
+		</nav>              
+	</div><!--/3-->
+	<div class="col-sm-9">
+		
+		<!--{YOUAREHERE_is}_on <div class="breadcrumb">{YOUAREHERE}</div> {YOUAREHERE_is}_on-->
+		<div id="mm-pagecontent">{PAGECONTENT}</div>
+	</div><!--/9-->
+</div><!--/row-->
+</div><!--/container-->
+
+<!--/{template_name} {component_layout} columns.html-->
