@@ -680,9 +680,7 @@ h5.tiny {
 #contentcontainerright > a {
   font-weight: 600;
 }
-a[href="tel*"] {
-	white-space: nowrap;
-}
+
 /* -- IE fixes (hopefully)  -- */
 
 * { -webkit-filter:none !important; filter:none !important; }
