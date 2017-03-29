@@ -419,26 +419,27 @@ a.btn.navbar-toggle { color: #e8e000; margin-bottom: 0; }
 	margin: 10px auto;
 	padding: 10px 10px;
 	border: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-webkit-transition:none;
-	-webkit-transition:none ;
-	transition:none ;
-	transition:none ;
-	transition:none;
+    -webkit-box-shadow: inset 0px 0px 1px #ddd;
+    box-shadow: inset 0px 0px 1px #ddd;
+    -webkit-transition: box-shadow 1s ease;
+    -webkit-transition: -webkit-box-shadow 1s ease;
+    transition: -webkit-box-shadow 1s ease;
+    transition: box-shadow 1s ease;
+    transition: box-shadow 1s ease, -webkit-box-shadow 1s ease;
+    border-radius: 5px;
 }
 
 .item-gc { min-height: 20px; }
 .item-single { max-width: 100%; min-height: 20px; }
 
 .item:hover, .item-gc:hover, .item-single:hover {
-	-webkit-box-shadow:none;
-	box-shadow: none;
-	-webkit-transition:none;
-	-webkit-transition: none;
-	transition: none;
-	transition: none;
-	transition:none;
+	-webkit-box-shadow: inset 0px 0px 5px #ccc;
+	box-shadow: inset 0px 0px 5px #ccc;
+	-webkit-transition: box-shadow 1s ease;
+	-webkit-transition: -webkit-box-shadow 1s ease;
+	transition: -webkit-box-shadow 1s ease;
+	transition: box-shadow 1s ease;
+	transition: box-shadow 1s ease, -webkit-box-shadow 1s ease;
 }
 
 .item .ico, .item-gc .ico, .item-single .ico{
@@ -567,6 +568,18 @@ a.btn.navbar-toggle { color: #e8e000; margin-bottom: 0; }
 
 /*Site-specific styles - these were created specifically for this site*/
 /*Greg's Custom Styles*/
+.class_fields {
+  margin-bottom: 2px;
+  font-size:11px;
+}
+.classitem h5 {
+  margin: 0 0 5px 0;
+  font-size: 15px;
+}
+.class_fields p {
+  font-style: italic;margin-bottom: 2px;
+  font-size: 11px;
+}
 h1 {
 	font-size: 20px;
 	color: #032d42;
