@@ -15,7 +15,7 @@ body {
 }
 
 
-a { color: #670210; }
+a { color: #670210; cursor: pointer; cursor: hand; }
 a:hover { 
 	color: #094765;
 	text-decoration: underline;
@@ -51,8 +51,6 @@ footer {
 
 @media (max-width:600px) {
 }
-
-
 
 /* -- Bootstrap-specific styles -- */
 
@@ -470,7 +468,7 @@ a.btn.navbar-toggle { color: #e8e000; margin-bottom: 0; }
 }
 
 .item .item-details h5, .item-gc .item-details h5, .item-single .item-details h5{
-	text-align: center;
+	text-align: left;
 }
 
 .item .item-details h5 a, .item-gc .item-details h5 a, .item-single .item-details h5 a{
@@ -486,7 +484,7 @@ a.btn.navbar-toggle { color: #e8e000; margin-bottom: 0; }
 }
 
 .item .item-details p, .item-single .item-details p {
-	text-align: center;
+	text-align: left;
 }
 
 .item .item-price, .item-single .item-price{
@@ -574,16 +572,52 @@ a.btn.navbar-toggle { color: #e8e000; margin-bottom: 0; }
 	white-space: nowrap;
 }
 .class_fields {
-  margin-bottom: 2px;
+  margin-bottom: 0;
   font-size:11px;
 }
 .classitem h5 {
-  margin: 0 0 5px 0;
+  margin: 0;
   font-size: 15px;
 }
 .class_fields p {
-  font-style: italic;margin-bottom: 2px;
+  font-style: italic;
+  margin-bottom: 0;
   font-size: 11px;
+}
+.classlistitem {
+  padding: 0;
+  margin: 0;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+.classlistitem h5[itemprop="name"] {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.classlistitem .item-details h5[itemprop="name"] a {
+  margin-bottom: 0;
+}
+.classlistitem:hover {
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  transition: none;
 }
 h1 {
 	font-size: 20px;
@@ -721,6 +755,9 @@ p[itemprop="description"] {
 #footer .col-sm-4 p {
 	margin-bottom: 0px!important;
 }
+.item.quickorder_3up {
+    text-align: left;
+}
 /* -- IE fixes (hopefully)  -- */
 
 * { -webkit-filter:none !important; filter:none !important; }
@@ -798,6 +835,17 @@ p[itemprop="description"] {
 	}/* This is your height at small size*/
 	.promo h1 {
 		font-size: 16px;  
+	}
+	.navbar > .container {
+	  width: 100%;
+	}
+	.navbar-nav>li>a{
+	  padding-left: 10px;
+	  padding-right: 10px;
+	}
+	.navbar-collapse {
+	  padding-left: 0;
+	  padding-right: 0;
 	}
 }
 
