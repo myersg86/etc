@@ -612,6 +612,7 @@ a.btn.navbar-toggle { color: #e8e000; margin-bottom: 0; }
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+   text-decoration: underline;
 }
 .classlistitem .item-details h5[itemprop="name"] a {
   margin-bottom: 0;
@@ -763,6 +764,10 @@ p[itemprop="description"] {
 }
 .item.quickorder_3up {
     text-align: left;
+}
+.classlistdetails {
+	text-decoration: underline;
+	
 }
 /* -- IE fixes (hopefully)  -- */
 
