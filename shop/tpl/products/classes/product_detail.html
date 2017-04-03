@@ -110,3 +110,143 @@ mm-head-->
 <div class="sblurb">{seo_blurb}</div>
 
 <!--/products/default/product_detail.html-->
+<script type="text/javascript">
+$(document).ready(function(){
+
+var btn;
+$('.cartadd,.wishadd').click(function() {
+   btn = $(this);
+});
+
+$('.addform').validate( {
+  submitHandler: function(form) {
+   	  //get the currently clicked button
+ 	  // var btn = $(":input[type=submit]:focus");
+ 	  if (btn.hasClass('wishadd')) {
+ 	  	 <!--loggedin
+			var submitData = $(form).serialize() + '&wishadd=1&ajax=1';
+			$.post("addtocart", submitData,
+		   function(data){
+		     btn.after('<div class="text-success">Added to Wish List!</div>');
+			});
+  	   loggedin-->
+       <!--loggedout form.submit(); loggedout-->
+ 	  } else {
+ 	  		console.log('validated');
+		  //e.preventDefault();
+		  var submitData = $(form).serialize() + '&ajax=1';
+		  $.post("addtocart", submitData,
+		  function(data){
+				 var addtocart_result = $.parseJSON(data);
+				 btn.after('<div class="text-success">' + addtocart_result.shortmessage + '<a href="viewcart" class="plm">View Cart</a></div>');
+					$('.mm-cart-qty').html(addtocart_result.total_qty);
+				 $('.mm-cart-total').html(addtocart_result.total_price);
+				  //$('#minicart').load('viewcart?stpl=minicart');
+		 });
+	  }
+
+  }
+});
+
+$('#recentcarousel').load('{THISPAGE}?stpl=_recentcarousel', function(){
+
+	/*for the recent items carousel */
+		$("#carousel-multiitems .carousel").carouFredSel({
+    	items	: null,
+    	scroll	: {
+    		duration		: 1000,
+    		timeoutDuration	: 2000
+    	},
+    	auto	: false,
+    	prev	: "#multiitems-prev",
+    	next	: "#multiitems-next"
+     });
+
+		 /*this is for equal li heights*/
+  	$('.multiitems').equalize({children: '.item-image'});
+  	$('.multiitems').equalize({children: '.item-name'});
+  	$('.multiitems').equalize({children: '.item-details'});
+		$('.multiitems').equalize({children: '.multiitem-price'});
+
+});
+if ($( ".optionSwitch" ).length > 0) {
+  //When clicking on swatches, change the menu to the selected item
+  $( ".optionSwitch" ).click(function() {
+  	$menuSelector = $('#' + $(this).attr('mm-variant-menu')+'-{product_id}');
+  	$val = $(this).attr('mm-swatch-id');
+  	$menuSelector.val($val);
+  });
+  
+  //When selecting from a menu, show the option image
+  $(".mm-variant").change(function() {
+  	$swatch = $('[mm-swatch-id='+$(this).val()+']');
+  	$swatch.trigger( "click" );
+  });
+}
+
+	//hide zoom carousel if only one thumbnail
+	if (('{product_image2}' == 'images-mm/cleardot.gif') && (($('.img-responsive.optimg').length == 0))) {
+		$('#carousel-zoom').hide();
+	};
+
+	//initiate the plugin and pass the id of the div containing gallery images
+  $("#img_01").elevateZoom({
+  	gallery:'gallery_01',
+		<!--desktop_view zoomType: "inner", desktop_view-->
+  	cursor: 'pointer',
+  	galleryActiveClass: 'active',
+  	responsive: true
+  });
+
+  //pass the images to Fancybox
+  $("#img_01").bind("click", function(e) {
+    var ez =   $('#img_01').data('elevateZoom');
+  	$.fancybox(ez.getGalleryList());
+    return false;
+  });
+
+	//make the width of the imagezoom variable
+  $("#gallery_01 a").click(function() {
+    $("#img_01").on("load",function() {
+        var height = $("#img_01").css("height");
+				var width = $("#img_01").css("width");
+        $(".zoomContainer").css("height", height);
+        $(".zoomContainer .zoomWindow").css("height", height);
+				$(".zoomContainer").css("width", width);
+        $(".zoomContainer .zoomWindow").css("width", width);
+      });
+  });
+
+
+
+	/*for the zoom carousel */
+		$("#carousel-zoom .carousel").carouFredSel({
+    	items	: null,
+    	scroll	: {
+    		duration		: 1000,
+    		timeoutDuration	: 2000
+    	},
+    	auto	: false,
+    	prev	: "#zoom-prev",
+    	next	: "#zoom-next"
+     });
+
+
+		$('.swipeable').swipe({
+  	swipe: function(event, direction, distance, duration, fingerCount) {},
+    click: function(event, target) {
+      $(target).click();
+    },
+    threshold: 75,
+    excludedElements: "button, input, select, textarea, .noSwipe",
+    swipeLeft: function() {
+      this.trigger('next');
+    },
+    swipeRight: function() {
+      this.trigger('prev');
+    },
+	});
+	
+
+ });
+</script>
