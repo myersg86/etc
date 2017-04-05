@@ -176,9 +176,9 @@ a.btn.navbar-toggle { color: #e8e000; margin-bottom: 0; }
 }
 /*this sets the link color in drop-down menu with hamburger and removes the border, shadow and margins at the top and bottom of drop-down menu*/
 @media (max-width:767px) {
-	.navbar-collapse.top-nav-collapse, .navbar-collapse.top-nav-collapse.in { border: 0; -webkit-box-shadow: none; box-shadow: none; }
+	.navbar-collapse.top-nav-collapse, .navbar-collapse.top-nav-collapse.in { border: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 	.navbar-default .navbar-nav { background-color: #fff; }
-	ul.nav.navbar-nav { margin-bottom: 0; }
+	ul.nav.navbar-nav { margin-bottom: 0; margin-left: 0; margin-right: 0;}
 	ul.nav.navbar-nav > li > a { color: #333; }
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus { color: #032d42; }
 }
@@ -820,6 +820,13 @@ line-height: 17px;
 
 /*Media Queries*/
 @media (max-width: 768px) {
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+		color: #09486b;
+	}
+	.navbar-default .navbar-nav > .dropdown > a .caret {
+	    border-top-color: #09486b;
+	    border-bottom-color: #09486b;
+	}
 	.col-xs-6 {
 		display: -webkit-box;
 		display: -webkit-flex;

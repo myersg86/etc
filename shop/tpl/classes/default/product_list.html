@@ -1,0 +1,111 @@
+<!--js:jquery/jquery.chained.mini.js-->
+<!--js:jquery/jquery-validate/jquery.validate.min.js-->
+<!--js:jquery/jquery-validate/additional-methods.min.js-->
+<!--js:jquery/jquery-validate/mm-methods.js-->
+
+<!--products/default/product_list.html-->
+<!--mm-head 
+<meta property="og:image" content="{BASEURL}/{cat_image1}"/>
+<script>
+//google remarketing variables
+var mm_google_tag_params = {
+ecomm_pagetype: 'category',
+ecomm_category:'{cat_name}'
+}
+</script>
+mm-head-->
+<div class="row">
+		<div class="col-sm-8">
+ <h1>{cat_name}</h1>
+ 		</div>
+		
+		<div class="col-sm-4">
+
+<!-- Sorting -->
+	<div class="controls hidden-xs">                               
+		<select id="sortbymenu" class="form-control" onChange="if (this.value) window.location.href=this.value">
+			<option value="">Sort By...</option>
+			<option id="sb_price" value="{doc_name}?sort_by=price&sb=price">Price Low to High</option>
+			<option id="sb_price_desc" value="{doc_name}?sort_by=price desc&sb=price_desc">Price High to Low</option>
+		    <option id="sb_product_name" value="{doc_name}?sort_by=product_name&sb=product_name">Item Name</option>
+		    <option id="sb_catalog_id" value="{doc_name}?sort_by=catelog_id&sb=catalog_id">Item Number</option>
+		    <option id="sb_original" value="{doc_name}">Original</option>
+		</select>  
+		</div><!--/controls-->
+		
+		
+
+     </div><!--/4-->
+		 </div><!--/row-->
+     <div class="clearfix"></div>
+		 
+		 <div class="row">
+		 	<div class="col-sm-12">
+				<div class="visible-xs">
+				<!--{cat_blurb1_is}_on<button class="btn btn-block btn-info mbm trigger">Category Description <span class="glyphicons circle_plus"></span></button><div class="blurb catblurb" style="display:none">{cat_blurb1}</div>{cat_blurb1_is}_on-->
+				</div>
+				<div class="blurb hidden-xs">{cat_blurb1}</div>
+			</div>
+		</div>
+
+     <div class="row items" itemscope itemtype="http://schema.org/SomeProducts">
+		 
+		<!-- NAME: product_list.html -->
+		<!-- BEGIN DYNAMIC BLOCK: product_list_row -->
+	
+		{PRODUCTCELL}
+		         	
+		
+		<!-- END DYNAMIC BLOCK: product_list_row -->
+		<!-- END: product_list.html -->
+			
+			<div class="clearfix"></div>
+			</div><!--/row-->
+   
+		<ul class="pagination">{PAGINATION}</ul>
+		
+		<div class="sblurb">{cat_seo_blurb}</div> 
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+   $('.addform').each(function() {  // attach to all form elements on page
+        $(this).validate({       // initialize plugin on each form
+    submitHandler: function(form) {
+   	  //get the currently clicked button
+ 	  // var btn = $(":input[type=submit]:focus");
+ 	  if (btn.hasClass('wishadd')) {
+ 	  	 form.submit(); 	  	
+ 	  } else {
+ 	  		console.log('validated');
+		  //e.preventDefault(); 	  
+		  var submitData = $(form).serialize() + '&ajax=1';
+		  $.post("addtocart", submitData,
+		  function(data){
+				 var addtocart_result = $.parseJSON(data); 
+				 btn.after('<div class="sbcontent margintop_small">' + addtocart_result.shortmessage + '</div>');
+				  $('#minicart').load('viewcart?stpl=minicart');
+		 });
+	  }
+
+  }
+});
+    });
+    
+/* to open the cat blurb on mobile and toggle icon */
+$('.trigger').click(function(){
+	$('.blurb.catblurb').toggle();
+	$('.glyphicons.circle_plus').toggleClass('circle_minus');
+});
+
+// to hide sort by on multilist
+if ("{list_action}" == "multilist") {
+	$("#sortbymenu").hide();
+} else if ('{sb}') {
+	$('#sb_{sb}').prop('selected', true);
+}
+
+});
+
+</script>
+
+  <!--/products/default/product_list.html-->
