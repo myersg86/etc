@@ -805,6 +805,13 @@ p[itemprop="description"] {
     height: auto !important;
     position: relative !important;
 } 
+.yarns #carousel-zoom .carousel .item,
+.yarns #carousel-gallery .carousel .item {
+    width: 65px;
+    height: 65px;
+    padding: 0;
+    margin: 0;
+}
 #gallery_01 > .item {
   border: none;
   box-shadow: none;
